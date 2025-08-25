@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      margin-top: 0;
+    }
+    nav {
+      background-color: white;
+      position: sticky;
+      top: 0px;
+      
+      z-index: 1000;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav ul li {
+      flex: 1; /* सभी बटन बराबर चौड़ाई लेंगे */
+  
+    }
+
+    nav ul li a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: clamp(15px, 3vw, 18px); /* responsive text */
+      padding: 14px 0;
+      background: black;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: white;
+      color: black;
+    }
+
+    /* Customise Button */
+    .custom-btn {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: clamp(14px, 3.5vw, 20px);
+      background: linear-gradient(45deg, #ff6699, #ff3366);
+      color: white;
+      text-align: center;
+      font-size: clamp(25px, 4vw, 24px);
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      position: sticky;
+      top: 40px;
+      z-index: 1000;
+    }
+
+    .custom-btn:hover {
+      background: linear-gradient(45deg, #ff3366, #cc0055);
+      color: black;
+    }
+
+      
+
+
+
+.about-container {
+  background-color: #fff8f0;
+  padding: 20px;
+  border-radius: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  line-height: 1.8;
+  margin-top: 0px;
+}
+
+.about-title {
+  color: #d6336c;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 75px;
+}
+
+.about-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.about-container strong {
+  color: #e76f51;
+}
+
+.about-footer {
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Highlights */
+.highlight-pink { color: #ff006e; }
+.highlight-purple { color: #9b5de5; }
+.highlight-blue { color: #00b4d8; }
+.highlight-green { color: #6a994e; }
+.highlight-orange { color: #f9844a; }
+
+a {
+  text-decoration: none;
+}
+
+/* Header box */
+.h1 {
+  font-size: 25px;
+  font-family: 'Lobster', cursive;
+  background-color: red;
+  width: 85%;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: yellow;
+  z-index: 1000;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Flex section */
+.m {
+  font-size: 38px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ab {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 40px;
+  }
+  .about-container p {
+    font-size: 16px;
+  }
+  .h1 {
+    width: 95%;
+    font-size: 22px;
+    padding: 8px;
+  }
+  .m {
+    font-size: 28px;
+  }
+  .ab {
+    font-size: 20px;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 35px;
+  }
+  .h1 {
+    font-size: 23px;
+    padding: 6px;
+  }
+  .m {
+    font-size: 22px;
+  }
+  .ab {
+    font-size: 18px;
+  }
+}
+
+
+
+.img-box {
+  background: linear-gradient(135deg, #000000, #222222);
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 15px;
+
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar को स्टाइल */
+.img-box::-webkit-scrollbar {
+  height: 10px;
+}
+.img-box::-webkit-scrollbar-thumb {
+  background: #ff3366;
+  border-radius: 10px;
+}
+.img-box::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+
+.img-box img {
+  width: 280px;
+  height: 550px;  /* fix size ताकि बराबर दिखे */
+  object-fit: cover;  /* image crop होके fit होगी */
+  margin: 0 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.img-box img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(255, 51, 102, 0.8);
+}
+
+  
+    </style>
+    </head>
+    <body>
+
+    <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About us1.html">About Us</a></li>
+      <li><a href="Contact us1.html">Contact Us</a></li>
+      <li><a href="My Order.html">My Orders</a></li>
+    </ul>
+  </nav>
+
+  <a href="Choose your photo.html" style=" text-decoration:none;">
+  <button class="custom-btn">Customise Your Photo</button>
+</a>
+  
+<div class="about-container"><sapn class="ab">👉</span>
+  <div class="h1" id="fallingBox" onclick="click()"><b>S.K. T-Shirt Printing and Gift Gallery</b></div><span class="m">👻🫣👻</span>
+  <d8v class="all">
+  <h2 class="about-title"> हमारे बारे में <span style="color:blue;">(About Us)</span></h2>
+
+  <p>
+    <strong>S.K. T-Shirt Printing & Gift Gallery</strong> एक ऐसा प्लेटफॉर्म है जहाँ आपकी भावनाएँ रंगों और डिज़ाइन के ज़रिए ज़िंदा होती हैं।<br>
+    हम सिर्फ कपड़ों या मग्स पर प्रिंट नहीं करते — हम आपकी <span class="highlight-pink">यादों</span>, <span class="highlight-purple">प्यार</span>, और <span class="highlight-blue">जज़्बात</span> को एक सुंदर तोहफे में बदलते हैं।
+  </p>
+
+  <p>
+    🎨 चाहे आपको हो यूनिक टी-शर्ट चाहिए,<br>
+    या किसी ख़ास को देना हो एक पर्सनलाइज्ड गिफ्ट — <br>
+    हम हर डिज़ाइन को <strong class="highlight-green">दिल से</strong> बनाते हैं।
+  </p>
+
+  <p>
+    📍 <strong>हमारा उद्देश्य:</strong><br>
+    हर ग्राहक की कल्पना को हकीकत में बदलना<br>
+    और उन्हें एक ऐसा प्रिंटेड गिफ्ट देना जो <span class="highlight-orange">हमेशा याद रहे</span>।
+  </p>
+
+  <p>
+    🛍️ <strong>हम क्या बनाते हैं?</strong><br>
+    ✔️ कस्टम T-Shirts<br>
+    ✔️ मैजिक और सिंपल Coffee Mugs<br>
+    ✔️ मोबाइल कवर, Keychains<br>
+    ✔️ फोटो फ्रेम्स और बहुत कुछ!
+  </p>
+
+  <p>
+    🤝 <strong>हमें क्यों चुनें?</strong><br>
+    💎 हाई-क्वालिटी प्रिंटिंग<br>
+    💖 इमोशनल टच के साथ डिज़ाइन<br>
+    ⏰ समय पर डिलीवरी<br>
+    🤗 भरोसेमंद और प्यार से भरी सर्विस
+  </p>
+
+  <p>
+    😃 <strong>हमारा पता:</strong><br>
+    उत्तर प्रदेश, जिला - <span class="highlight-green">सीतापुर</span>, पोस्ट - <span class="highlight-green">कमलापुर</span><br>
+    रोड - जयरामपुर | निकट - <br>
+    रामेश्वरी त्रिपाठी विद्या मंदिर स्कूल वा
+    <span  style="color:red;">
+    <br>गुड्डू गारमेंट की दुकान।</span>
+  </p>
+  <b>
+<p>Mo. Number 📞 :- 9838881619</p>
+<p>Mo. Number 📞 :- 9198127065</p>
+<p> Instagram :-
+<a href="https://www.instagram.com/mahendrajatav4308?igsh=MTcyMDIzeHBlbGFxYQ==" class="a">@mahendrajatav4308</a>
+Instagram:- <a href="https://www.instagram.com/saurabhindian03?igsh=MWVpNGVvNThvMzV4NQ==" class="a">@saurabhindian03</a><br>
+My Youtube Channel:-
+</p>
+
+  <p class="about-footer">
+    🙏 धन्यवाद कि आपने हमें चुना — <br>
+    चलिए मिलकर कुछ <strong class="highlight-orange">ख़ास</strong> बनाते हैं,<br>
+    किसी की <strong class="highlight-purple">यादों</strong> को <strong class="highlight-pink">यादगार</strong> बनाते हैं 🥰
+  </p>
+  </b>
+  </div>
+</div>
+<h1 style="text-align:center;">My Photos</h1>
+
+<div class="img-box">
+  <img src="img01.webp" alt="Gallery Image"> 
+  <img src="IMG_20250322_193209.jpg" alt="Gallery Image">
+  <img src="img02.webp" alt="Gallery Image">
+  <img src="IMG_20241116_123851.jpg" alt="Gallery Image">
+  <img src="IMG_20250825_132533.jpg" alt="Gallery Image">
+  <img src="img4.webp" alt="Gallery Image">
+  <img src="Snapchat-1263814691.jpg" alt="Gallery Image">
+
+
+</div>
+
+<script>
+function fallBounceReturn(elementId) {
+  const el = document.getElementById(elementId);
+  
+  const originalTop = el.offsetTop;
+  const originalLeft = el.offsetLeft;
+  el.style.position = "absolute";
+  el.style.left = originalLeft + "px";
+
+  let y = 0;
+  let velocity = 0;
+  let gravity = 3;
+  let bounceCount = 0;
+  const ground = 700; // नीचे तक कितना गिरे, px में
+
+  let falling = setInterval(() => {
+    velocity += gravity;
+    y += velocity;
+
+    if (y >= ground) {
+      y = ground;
+      velocity = -velocity * 0.8; // bounce
+      bounceCount++;
+    }
+
+    el.style.top = y + "px";
+
+    if (bounceCount >= 4 && Math.abs(velocity) < 1) {
+      clearInterval(falling);
+      
+      // वापसी animation
+      let returnInterval = setInterval(() => {
+        y -= 10;
+        if (y <= originalTop) {
+          clearInterval(returnInterval);
+          el.style.top = originalTop + "px";
+        } else {
+          el.style.top = y + "px";
+        }
+      }, 20);
+    }
+  }, 35);
+}
+
+// क्लिक पर चालू करना है
+document.getElementById("fallingBox").addEventListener("click", function () {
+  fallBounceReturn("fallingBox");
+});
+</script>
+      </body>
+  </html>

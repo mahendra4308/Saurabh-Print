@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="hi">
+<html>
+<head>
+  <title>Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      margin-top: 0;
+    }
+    nav {
+      background-color: white;
+      position: sticky;
+      top: 0px;
+      
+      z-index: 1000;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav ul li {
+      flex: 1; /* सभी बटन बराबर चौड़ाई लेंगे */
+  
+    }
+
+    nav ul li a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: clamp(15px, 3vw, 18px); /* responsive text */
+      padding: 14px 0;
+      background: black;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: white;
+      color: black;
+    }
+
+    /* Customise Button */
+    .custom-btn {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: clamp(14px, 3.5vw, 20px);
+      background: linear-gradient(45deg, #ff6699, #ff3366);
+      color: white;
+      text-align: center;
+      font-size: clamp(25px, 4vw, 24px);
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      position: sticky;
+      top: 40px;
+    }
+
+    .custom-btn:hover {
+      background: linear-gradient(45deg, #ff3366, #cc0055);
+      color: black;
+    }
+
+      
+  
+  
+  h1{
+    text-align: center;
+    color: blue;
+  }
+  h5{
+    text-align: center;
+    color: gray;
+  }
+    .product-card {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+    
+      box-shadow: 2px 2px 8px #aaa;
+      border: 2px solid black;
+      margin-top: 15px;
+    }
+    .product-card img {
+      width: 90%;
+      height: auto;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 8px;
+      
+    }
+    .product-card h4 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #333;
+    }
+    .product-card p {
+      font-size: 20px;
+      color: green;
+      margin: 0;
+    }
+  .buy-btn{ 
+      font-size:25px;
+    margin: 10px; 
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius:10px;
+    }
+    .buy-btn:active{
+      background-color: yellow;
+      color: red;
+    }
+    .size-row {
+  display: flex;
+  align-items: center;
+  
+  flex-wrap: wrap;
+ 
+}
+
+
+  </style>
+</head>
+<body>
+        <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About us1.html">About Us</a></li>
+      <li><a href="Contact us1.html">Contact Us</a></li>
+      <li><a href="My Order.html">My Orders</a></li>
+    </ul>
+  </nav>
+
+  <a href="Choose your photo.html" style=" text-decoration:none;">
+  <button class="custom-btn">Customise Your Photo</button>
+</a>
+
+  
+<h1> Category ➡  Pillow</h1>
+
+
+
+<div class="product-card">
+  <img src="Pic50.jpg" alt="T-Shirt">
+  <hr>
+  <h4>Pillow</h4>
+  <p>₹199</p>
+  <div class="size-row">
+    Size: Standard
+</div>
+<p >Free Delivery   <button class="buy-btn" onclick="buyNow(' Pillow', '199',  'Pic50.jpg')">Buy Now</button></p>
+</div>
+
+
+<div class="product-card">
+  <img src="Pic51.jpg" alt="T-Shirt">
+  <hr>
+  <h4> Pillow</h4>
+  <p>₹199</p>
+  <div class="size-row">
+    Size: Standard
+</div>
+<p >Free Delivery  <button class="buy-btn" onclick="buyNow(' Pillow', '199',  'Pic51.jpg')">Buy Now</button></p>
+</div>
+
+
+<div class="product-card">
+  <img src="Pic52.jpg" alt="T-Shirt">
+  <hr>
+  <h4>Pillow</h4>
+  <p>₹199</p>
+  <div class="size-row">
+    Size: Standard
+</div>
+<p >Free Delivery <button class="buy-btn" onclick="buyNow(' Pillow', '199',  'Pic52.jpg')">Buy Now</button></p>
+</div>
+
+
+
+<div class="product-card">
+  <img src="Pic53.jpg" alt="T-Shirt">
+  <hr>
+  <h4>Pillow</h4>
+  <p>₹199</p>
+  <div class="size-row">
+    Size: Standard
+</div>
+<p >Free Delivery  <button class="buy-btn" onclick="buyNow(' Pillow', '199',  'Pic53.jpg')">Buy Now</button></p>
+</div>
+
+
+
+
+
+
+<div class="product-card">
+  <img src="Pic55.jpg" alt="T-Shirt">
+  <hr>
+  <h4>Pillow</h4>
+  <p>₹199</p>
+  <div class="size-row">
+    Size: Standard
+</div>
+<p >Free Delivery <button class="buy-btn" onclick="buyNow(' Pillow', '199',  'Pic55.jpg')">Buy Now</button></p>
+</div>
+
+
+
+
+<div class="product-card">
+  <img src="Pic56.jpg" alt="T-Shirt">
+  <hr>
+  <h4> Pillow</h4>
+  <p>₹199</p>
+  <div class="size-row">
+    Size: Standard
+</div>
+<p >Free Delivery  <button class="buy-btn" onclick="buyNow(' Pillow', '199',  'Pic56.jpg')">Buy Now</button></p>
+</div>
+
+
+
+<h5>No More</h5>
+<script>
+  function buyNow(name, price, img, event) {
+    // सिर्फ product details pass करना है
+    localStorage.setItem("productName", name);
+    localStorage.setItem("productPrice", price);
+    localStorage.setItem("productImage", img);
+
+    // Buy-now page खोलना है (नया tab)
+    window.open('Buy-now.html', '_blank');  
+  }
+</script>
+
+</body>
+</html>
