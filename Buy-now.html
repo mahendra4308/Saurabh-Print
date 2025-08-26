@@ -410,6 +410,106 @@ if (name) {
     hiddenSize.value = displaySize;
   }
 }
+
+
+
+
+
+
+
+
+
+  // Existing order submit function को WhatsApp send में बदल रहे हैं
+  function submitOrder(e) {
+    e.preventDefault();
+
+    // Form values
+    const customer = document.getElementById("m1").value;
+    const mobile = document.getElementById("m2").value;
+    const state = document.getElementById("m3").value;
+    const district = document.getElementById("m4").value;
+    const post = document.getElementById("m5").value;
+    const pincode = document.getElementById("m6").value;
+    const house = document.getElementById("m7").value;
+
+    const productName = localStorage.getItem("productName");
+    const productPrice = localStorage.getItem("productPrice");
+    const productImg = localStorage.getItem("productImage");
+    const quantity = q;
+    const size = document.getElementById("hidden-size").value;
+    const totalPrice = parseInt(productPrice) * quantity;
+
+    // WhatsApp message तैयार करना
+    let message = `नमस्ते! मैं यह product order करना चाहता हूँ:\n\n`;
+    message += `Product: ${productName}\n`;
+    message += `Price: ₹${productPrice}\n`;
+    message += `Quantity: ${quantity}\n`;
+    message += `Size: ${size}\n`;
+    message += `Total Price: ₹${totalPrice}\n`;
+    message += `Image URL: ${window.location.origin}/${productImg}\n\n`;
+    message += `Customer Details:\n`;
+    message += `Name: ${customer}\n`;
+    message += `Mobile: ${mobile}\n`;
+    message += `State: ${state}\n`;
+    message += `District: ${district}\n`;
+    message += `Post: ${post}\n`;
+    message += `Pin Code: ${pincode}\n`;
+    message += `House No: ${house}`;
+
+    // WhatsApp open (तुम्हारा नंबर: +919838881619)
+    let whatsappURL = `https://wa.me/919838881619?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+
+    // Optional: LocalStorage में order save करना
+    const date = new Date().toLocaleString();
+    let orders = JSON.parse(localStorage.getItem('myOrders')) || [];
+    orders.push({
+      product: productName,
+      price: productPrice,
+      totalPrice: totalPrice,
+      img: productImg,
+      size: size,
+      quantity: quantity,
+      customer: customer,
+      mobile: mobile,
+      state: state,
+      district: district,
+      post: post,
+      pincode: pincode,
+      house: house,
+      date: date,
+      status: "Pending"
+    });
+    localStorage.setItem('myOrders', JSON.stringify(orders));
+
+    alert("✅ Your order is successfully sent to WhatsApp!");
+    document.getElementById("orderForm").reset();
+    window.location.href = "My Order.html";
+  }
+
+  // Form validation
+  function check(e){
+    var b1=document.getElementById("m1").value;
+    var b2=document.getElementById("m2").value;
+    var b3=document.getElementById("m3").value;
+    var b4=document.getElementById("m4").value;
+    var b5=document.getElementById("m5").value;
+    var b6=document.getElementById("m6").value;
+    var b7=document.getElementById("m7").value;
+    if(b1==="" || b2==="" ||  b3==="" || b4==="" || b5==="" || b6==="" || b7==="" )
+    {
+      alert("Your data is required ❌❌");
+      return false;
+    }
+    else{
+      submitOrder(e);
+      return true;
+    }
+  }
+
+    
+
+    
   </script>
 
 </body>
