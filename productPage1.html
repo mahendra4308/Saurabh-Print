@@ -294,7 +294,7 @@
 
 </p>
 </div>
-
+<div id="product-list"></div>
 
 <h5>No More</h5>
 
@@ -308,7 +308,47 @@
 
     // Buy-now page खोलना है (नया tab)
     window.open('Buy-now.html', '_blank');  
+
   }
+
+    document.addEventListener("DOMContentLoaded", function () {
+  let products = JSON.parse(localStorage.getItem("products_tshirt")) || [];
+  let container = document.getElementById("product-list");
+  container.innerHTML = "";
+  products.forEach((p, index) => {
+    let card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${p.img}" alt="Product">
+      <hr>
+      <h4>${p.name}</h4>
+      <p>₹${p.price}</p>
+      <p>Free Delivery  
+        <button class="buy-btn" onclick="buyNow('${p.name}','${p.price}','${p.img}',event)">Buy Now</button>
+        <button class="delete-btn" onclick="deleteProduct(${index})">Delete</button>
+      </p>
+    `;
+    container.appendChild(card);
+  });
+});
+
+function buyNow(name, price, img, e) {
+  if(e) e.preventDefault();
+  localStorage.setItem("productName", name);
+  localStorage.setItem("productPrice", price);
+  localStorage.setItem("productImage", img);
+  window.open('Buy-now.html', '_blank');
+}
+
+function deleteProduct(index) {
+  let products = JSON.parse(localStorage.getItem("products_tshirt")) || [];
+  products.splice(index, 1);
+  localStorage.setItem("products_tshirt", JSON.stringify(products));
+  location.reload();
+}
+
+    
+  
 </script>
 
 </body>
