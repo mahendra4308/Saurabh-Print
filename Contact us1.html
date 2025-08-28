@@ -267,28 +267,31 @@ margin: 5px;
 </div>
       </body>
       <script>
-        function form(){
-        var a=document.getElementById("n1").value;
-        var b=document.getElementById("n2").value;
-        var c=document.getElementById("n3").value;
-        if(a==="" || b===""|| c==="")
-        
-        {
-          alert("Your felds is required || Please check your detels ❌❌");
-         return false;
-        }
-        if(!/^\d{10}$/.test(b))
-        {
-          alert("Please Check Your Mobile Number");
-          return false;
-        }
-        else{
-          alert("Your Message send  Thankyou 📩 😃  ")
-          document.querySelector(".contact-form").reset();
-          return true;
-          
-        }
-        }
-        
-        </script>
+  function form(){
+    var a=document.getElementById("n1").value;
+    var b=document.getElementById("n2").value;
+    var c=document.getElementById("n3").value;
+
+    if(a==="" || b==="" || c===""){
+      alert("Your fields are required || Please check your details ❌❌");
+      return false;
+    }
+
+    if(!/^\d{10}$/.test(b)){
+      alert("Please Check Your Mobile Number");
+      return false;
+    }
+
+    // ✅ WhatsApp Message
+    var message = "👤 नाम: " + a + "%0A📱 मोबाइल: " + b + "%0A💬 मैसेज: " + c;
+    var whatsappURL = "https://wa.me/919838881619?text=" + message;
+
+    // ✅ WhatsApp पर redirect
+    window.open(whatsappURL, "_blank");
+
+    // ✅ Form Reset
+    document.querySelector(".contact-form").reset();
+    return false; // Page reload ना हो
+  }
+</script>
 </html>
